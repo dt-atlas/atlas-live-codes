@@ -6,6 +6,8 @@ This live-code covers usage of the `signal` and `sigaction` system-call wrappers
 
 (See source code in `./src/signal_syscall.c`)
 
+Note: Usage of this system call is not portable and `sigaction` should be preferred.
+
 To build this example, run:
 ```bash
 $ make signal_syscall
@@ -26,3 +28,7 @@ The output will look something like this when you send `SIGINT` from your termin
 ```
 
 (Just click `Ctrl+Z` to send `SIGKILL` and that will stop the process)
+
+## `sigaction(2)`
+
+Coming soon!
