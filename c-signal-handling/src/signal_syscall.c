@@ -1,9 +1,9 @@
-/**
- * Paraphrased by DT from `signal(2)` of the Linux Programmer's Manual...
- *   Invocation of this system call is only portable when setting a signal 
- *   handler to the default handler or setting the "ignore" handler, 
- *   so its usage is discouraged in favor of `sigaction(2)`
- */
+///
+/// Paraphrased by DT from `signal(2)` of the Linux Programmer's Manual...
+///   Invocation of this system call is only portable when setting a signal 
+///   handler to the default handler or setting the "ignore" handler, 
+///   so its usage is discouraged in favor of `sigaction(2)`
+///
 
 #include <errno.h>
 #include <signal.h>
@@ -15,7 +15,7 @@
 typedef void (*sighandler_t)(int);
 
 /// @brief Static pointer for storing user-defined SIGINT message
-static const char *sigint_message = NULL; 
+static const char *sigint_message = NULL;
 
 /// @brief Prints the user error message when this process receives SIGINT
 /// @param signal_number 
