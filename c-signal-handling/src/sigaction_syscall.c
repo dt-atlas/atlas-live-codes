@@ -14,7 +14,7 @@ typedef void (*sighandler_t)(int);
 /// @brief Static pointer for storing user-defined SIGINT message
 static const char *sigint_message = NULL;
 
-/// @brief Static structure for configuring signal behavior with
+/// @brief Static structure for configuring signal behavior
 static struct sigaction new_sa;
 
 /// @brief Static structure for retrieving current signal behavior
@@ -43,9 +43,9 @@ int main(int argc, char **argv)
 	/// Setting SIGINT message from command-line argument
 	sigint_message = argv[1];
 
-	/// Function prototype for `signal` syscall wrapper
-	/// sighandler_t signal(int signum, sighandler_t handler);
+	/// Set signal handler on the sigaction config
 	new_sa.sa_handler = danielles_signal_handler;
+	/// Call sigaction, returns -1 on error
 	errno = 0;
 	if (sigaction(SIGINT, &new_sa, &old_sa) == -1) {
 		perror("sigaction");
