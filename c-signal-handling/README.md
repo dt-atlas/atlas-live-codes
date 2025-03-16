@@ -24,11 +24,32 @@ The output will look something like this when you send `SIGINT` from your termin
 ^CUser message: Thanks for the Ctrl+C!
 ^CUser message: Thanks for the Ctrl+C!
 ^Z
-[1]+  Stopped                 build/01-signal_syscall 'Thanks for the Ctrl+C!'
+[1]+  Stopped                 build/signal_syscall 'Thanks for the Ctrl+C!'
 ```
 
 (Just click `Ctrl+Z` to send `SIGKILL` and that will stop the process)
 
 ## `sigaction(2)`
 
-Coming soon!
+(See source code in `./src/sigaction_syscall.c`)
+
+To build this example, run:
+```bash
+$ make sigaction_syscall
+```
+
+Example usage:
+```bash
+$ build/sigaction_syscall 'Thanks for the Ctrl+C!'
+```
+
+The output will look something like this when you send `SIGINT` from your terminal.
+```
+^CUser message: Thanks for the Ctrl+C!
+^CUser message: Thanks for the Ctrl+C!
+^CUser message: Thanks for the Ctrl+C!
+^Z
+[1]+  Stopped                 build/sigaction_syscall 'Thanks for the Ctrl+C!'
+```
+
+(Just click `Ctrl+Z` to send `SIGKILL` and that will stop the process)
