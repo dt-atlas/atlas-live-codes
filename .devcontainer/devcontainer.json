@@ -1,3 +1,18 @@
 {
-    "image": "mcr.microsoft.com/devcontainers/cpp:ubuntu-24.04"
+    "name": "Danielle's Live-Code Dev Container",
+    "build": {
+        "context": ".",
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-vscode.cpptools"
+            ]
+        }
+    }
 }
